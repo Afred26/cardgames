@@ -1,6 +1,9 @@
 package hand
 
-import "cardgames/card"
+import (
+	"cardgames/card"
+	"slices"
+)
 
 type Hand struct {
 	Cards []card.Card
@@ -24,7 +27,10 @@ func (h Hand) String() string {
 
 // Remove entfernt eine Karte aus der Hand.
 func (h *Hand) Remove(c card.Card) {
-	// TODO
+	pos := slices.Index(h.Cards, c)
+	if pos != -1 {
+		h.Cards = append(h.Cards[:pos], h.Cards[pos+1:]...)
+	}
 }
 
 // Len gibt die Anzahl der Karten in der Hand zurück.
