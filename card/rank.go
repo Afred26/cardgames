@@ -1,5 +1,7 @@
 package card
 
+import "fmt"
+
 type Rank int
 
 const (
@@ -47,7 +49,6 @@ func (r Rank) String() string {
 	case Ace:
 		return "A"
 	default:
-		return "Invalid"
-
+		return fmt.Sprintf("%d", r)
 	}
 }

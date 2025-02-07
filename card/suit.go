@@ -20,6 +20,6 @@ func (s Suit) String() string {
 	case Clubs:
 		return "♣"
 	default:
-		return "Invalid Suit"
+		return "invalid suit"
 	}
 }
